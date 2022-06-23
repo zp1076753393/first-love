@@ -1,4 +1,4 @@
 # first-love
 Try to bring love
 
-һ�д����￪ʼ
+一切从这里开始
