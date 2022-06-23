@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.6.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>sparks.of.fire</groupId>
+    <artifactId>first-love</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2021.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 依赖管理，用于管理spring-cloud的依赖 -->
+    <modules>
+        <!-- 通用配置 -->
+        <module>first-love-common</module>
+        <!-- 注册发现中心 -->
+        <module>first-love-eureka</module>
+        <!-- 网关微服务 -->
+        <module>first-love-gateway</module>
+        <!-- 用户微服务 -->
+        <module>first-love-user</module>
+        <!-- rabbitmq服务 -->
+        <module>first-love-rabbitmq</module>
+    </modules>
+
+    <!-- 版本管理 -->
+    <properties>
+        <!-- 基础框架 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <!-- 代码块版本 -->
+        <common.version>0.0.1</common.version>
+        <!-- 依赖版本 -->
+        <gateway.version>3.1.1</gateway.version>
+        <mysql.version>8.0.28</mysql.version>
+        <druid.version>1.2.8</druid.version>
+        <mybatis.plus.version>3.5.1</mybatis.plus.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
